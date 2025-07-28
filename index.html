@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAZIM - Thumbnail Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .gallery-item {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05) translateY(0);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .modal-close-button {
+            transition: transform 0.2s ease;
+        }
+        .modal-close-button:hover {
+            transform: scale(1.1);
+        }
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="https://ik.imagekit.io/wzihokaew/CO2%20(5).jpg?updatedAt=1753622044781" alt="Logo" class="h-10 w-auto rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x40/111827/ffffff?text=Logo';">
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="hover:text-blue-400 transition-colors">Portfolio</a>
+                <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </nav>
+            <a href="#contact" class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-transform transform hover:scale-105">
+                Hire Me
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#portfolio" class="block py-2 hover:text-blue-400">Portfolio</a>
+            <a href="#services" class="block py-2 hover:text-blue-400">Services</a>
+            <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+            <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
+             <a href="#contact" class="block mt-2 bg-blue-600 hover:bg-blue-700 text-white text-center font-semibold py-2 px-6 rounded-lg transition-transform transform hover:scale-105">
+                Hire Me
+            </a>
+        </div>
+    </header>
+
+    <section class="hero-bg py-24 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                Thumbnails That Get <span class="text-blue-400">Clicks</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                I'm SAZIM, a professional thumbnail designer helping creators boost their views and engagement with stunning, clickable art.
+            </p>
+            <a href="#portfolio" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-transform transform hover:scale-105 inline-block">
+                View My Work
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">My Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item" style="animation-delay: 0.1s;" data-image="https://ik.imagekit.io/wzihokaew/IMG_20250417_201630_764.jpg?updatedAt=1753621722900">
+                    <img src="https://ik.imagekit.io/wzihokaew/IMG_20250417_201630_764.jpg?updatedAt=1753621722900" alt="Tech Lifestyle Thumbnail" class="rounded-lg w-full h-full object-cover shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/1280x720/111827/ffffff?text=Image+Not+Found';">
+                </div>
+                <div class="gallery-item" style="animation-delay: 0.2s;" data-image="https://ik.imagekit.io/wzihokaew/Zaid's%20Thumbnail%20upgraded.jpg?updatedAt=1753621680327">
+                    <img src="https://ik.imagekit.io/wzihokaew/Zaid's%20Thumbnail%20upgraded.jpg?updatedAt=1753621680327" alt="Gaming Channel Thumbnail" class="rounded-lg w-full h-full object-cover shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/1280x720/111827/ffffff?text=Image+Not+Found';">
+                </div>
+                <div class="gallery-item" style="animation-delay: 0.3s;" data-image="https://ik.imagekit.io/wzihokaew/MONEY%20THUMBNAIL.jpg?updatedAt=1753621699695">
+                    <img src="https://ik.imagekit.io/wzihokaew/MONEY%20THUMBNAIL.jpg?updatedAt=1753621699695" alt="Finance Thumbnail" class="rounded-lg w-full h-full object-cover shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/1280x720/111827/ffffff?text=Image+Not+Found';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="service-card bg-gray-900 p-8 rounded-lg border border-gray-700">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Basic Pack</h3>
+                        <p class="text-4xl font-extrabold text-blue-400 mb-4">$15</p>
+                        <p class="text-gray-400 mb-6">Per Thumbnail</p>
+                        <ul class="text-gray-300 space-y-2 mb-8 text-left">
+                            <li>✓ 1 High-Quality Thumbnail</li>
+                            <li>✓ 2 Revisions</li>
+                            <li>✓ 24-Hour Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="order-now-btn mt-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105" data-plan="Basic Pack">
+                        <span>Order Now</span>
+                        <span class="block text-xs opacity-75">via WhatsApp</span>
+                    </a>
+                </div>
+                <div class="service-card relative bg-gray-900 p-8 rounded-lg border-2 border-blue-500 transform md:scale-105">
+                     <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase absolute -top-4 right-4">Popular</span>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Pro Pack</h3>
+                        <p class="text-4xl font-extrabold text-blue-400 mb-4">$60</p>
+                        <p class="text-gray-400 mb-6">For 5 Thumbnails</p>
+                        <ul class="text-gray-300 space-y-2 mb-8 text-left">
+                            <li>✓ 5 High-Quality Thumbnails</li>
+                            <li>✓ Unlimited Revisions</li>
+                            <li>✓ Source File Included</li>
+                            <li>✓ 24-Hour Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="order-now-btn mt-auto bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105" data-plan="Pro Pack">
+                        <span>Order Now</span>
+                        <span class="block text-xs opacity-75">via WhatsApp</span>
+                    </a>
+                </div>
+                <div class="service-card bg-gray-900 p-8 rounded-lg border border-gray-700">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Bulk Pack</h3>
+                        <p class="text-4xl font-extrabold text-blue-400 mb-4">$100</p>
+                        <p class="text-gray-400 mb-6">For 10 Thumbnails</p>
+                        <ul class="text-gray-300 space-y-2 mb-8 text-left">
+                            <li>✓ 10 High-Quality Thumbnails</li>
+                            <li>✓ Unlimited Revisions</li>
+                            <li>✓ Source File Included</li>
+                            <li>✓ 24-Hour Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="order-now-btn mt-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105" data-plan="Bulk Pack">
+                        <span>Order Now</span>
+                        <span class="block text-xs opacity-75">via WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3">
+                <img src="https://ik.imagekit.io/wzihokaew/CO2%20(5).jpg?updatedAt=1753622044781" alt="My Logo" class="rounded-lg mx-auto shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/111827/ffffff?text=Logo';">
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
+                <p class="text-gray-300 mb-4">
+                    Hi, I'm SAZIM. With over 2 years of experience in graphic design, I specialize in creating YouTube thumbnails that not only look great but are strategically designed to increase click-through rates. I'm passionate about visual storytelling and understanding the psychology behind what makes a viewer click.
+                </p>
+                <p class="text-gray-300">
+                    My process involves analyzing your content, understanding your target audience, and creating a thumbnail that is both eye-catching and accurately represents your video. Let's work together to make your content stand out!
+                </p>
+                <p class="text-gray-300 text-2xl">
+                 </p>   
+                    Designs that don't just look good — they get clicks. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Create Together</h2>
+            <div id="plan-selection-info" class="hidden bg-blue-900/50 text-blue-200 border border-blue-700 rounded-lg p-3 mb-6"></div>
+            <p class="text-gray-300 mb-8">Have a project in mind? Fill out the form below or use one of the options to get in touch. I'll get back to you within 24 hours.</p>
+            
+            <form id="contact-form" class="space-y-6">
+                <input type="text" name="Name" placeholder="Your Name" class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="email" name="Email" placeholder="Your Email" class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <textarea name="Project_Details" placeholder="Tell me about your project..." rows="5" class="w-full bg-gray-900 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-transform transform hover:scale-105">
+                    Send Message via WhatsApp
+                </button>
+            </form>
+            
+            <div class="mt-10">
+                <p class="text-gray-400 mb-4">Or reach out directly:</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/9813199845" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition-transform transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.849 6.069l-1.254 4.587 4.82-1.251zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.fiverr.com/s/99ER5Ex" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition-transform transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.14 6.42a2.38 2.38 0 0 0-2.2-1.35h-2.43v10.5h2.43c1.3 0 2.36-1.06 2.36-2.36v-4.42c0-.7-.33-1.34-.86-1.77zm-3.41 5.72V8.53h1.18c.55 0 1 .45 1 1v2.58c0 .55-.45 1-1 1h-1.18zM4.86 5.07H11.3v2.11H7.3v2.6h3.5v2.1H7.3v3.75H4.86V5.07z"/></svg>
+                        <span>Fiverr</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 SAZIM. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content max-w-4xl max-h-full transform scale-95 opacity-0">
+            <img id="modal-image" src="" alt="Full Screen Thumbnail" class="rounded-lg max-w-full max-h-[90vh] object-contain">
+        </div>
+        <button id="modal-close-button" class="modal-close-button absolute top-4 right-6 text-white text-4xl font-bold">&times;</button>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contact-form');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalContent = document.querySelector('#image-modal .modal-content');
+            const modalCloseButton = document.getElementById('modal-close-button');
+            const orderNowButtons = document.querySelectorAll('.order-now-btn');
+            const planSelectionInfo = document.getElementById('plan-selection-info');
+            const projectDetailsTextarea = contactForm.querySelector('textarea[name="Project_Details"]');
+
+            // --- Functions ---
+            function openModal(imageSrc) {
+                if (!imageModal || !modalImage || !modalContent) return;
+                modalImage.src = imageSrc;
+                imageModal.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                }, 50);
+            }
+
+            function closeModal() {
+                 if (!imageModal || !modalContent) return;
+                modalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    imageModal.classList.add('opacity-0', 'pointer-events-none');
+                    modalImage.src = '';
+                }, 300);
+            }
+
+            // --- Event Listeners ---
+
+            // Order Now Buttons
+            orderNowButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const plan = this.dataset.plan;
+
+                    // Update and show the info box
+                    planSelectionInfo.textContent = `You've selected the "${plan}". Please fill out the form below to proceed.`;
+                    planSelectionInfo.classList.remove('hidden');
+
+                    // Pre-fill the textarea
+                    projectDetailsTextarea.value = `I'm interested in ordering the "${plan}".\n\n`;
+
+                    // Scroll to contact section
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Optional: focus the name field for better user experience
+                    contactForm.querySelector('input[name="Name"]').focus();
+                });
+            });
+
+            // Mobile Menu Toggle
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Gallery Item Clicks to Open Modal
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const image = item.dataset.image;
+                    openModal(image);
+                });
+            });
+
+            // Modal Closing
+            if (modalCloseButton) {
+                modalCloseButton.addEventListener('click', closeModal);
+            }
+            if(imageModal) {
+                 imageModal.addEventListener('click', (event) => {
+                    if (event.target === imageModal) {
+                        closeModal();
+                    }
+                });
+            }
+             document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !imageModal.classList.contains('pointer-events-none')) {
+                    closeModal();
+                }
+            });
+
+            // Contact Form Submission to WhatsApp
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = contactForm.querySelector('input[name="Name"]').value;
+                    const email = contactForm.querySelector('input[name="Email"]').value;
+                    const projectDetails = projectDetailsTextarea.value; // Use the value from the textarea
+                    
+                    const message = `*Name:* ${name}\n*Email:* ${email}\n\n*Project Details:*\n${projectDetails}`;
+                    const encodedMessage = encodeURIComponent(message);
+                    const finalURL = `https://wa.me/9813199845?text=${encodedMessage}`;
+                    window.open(finalURL, '_blank');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
